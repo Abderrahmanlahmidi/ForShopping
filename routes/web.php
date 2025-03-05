@@ -31,6 +31,10 @@ Route::delete('/dashboard/produits/delete/{produit}', [ProduitController::class,
 Route::get('/dashboard/produits/edit/{produit}', [ProduitController::class, 'edit']);
 Route::put('/dashboard/produits/update/{produit}', [ProduitController::class, 'update']);
 
+Route::post('/produits/{produit}', [ProduitController::class, 'products']);
+Route::get('/panier', [ProduitController::class, 'displayProductsPanier']);
+Route::get('/produit/{details}', [ProduitController::class, 'detailsProduct']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -13,8 +13,6 @@ class CategorieController extends Controller
          return view('dashboard/categorie', compact('categories'));
      }
 
-
-
      public function store(Request $request){
          $request->validate([
              'categorie' => 'required',
@@ -33,6 +31,7 @@ class CategorieController extends Controller
          $categorie->delete();
          return redirect('/dashboard/categories');
      }
+
 
 
 

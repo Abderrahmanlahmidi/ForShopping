@@ -71,7 +71,18 @@ class ProduitController extends Controller
             'categorie_id' => $request['categorie']
         ]);
         return redirect('/dashboard/produits');
+
     }
 
+    public function displayProductsPanier(){
+        return view('home/addProducts');
+    }
+
+    public function detailsProduct(Produit $details)
+    {
+        $detail = Produit::with('categorie')->find($details->id);
+        dd($detail);
+        return view('home/productDetails', compact('item'));
+    }
 
 }
